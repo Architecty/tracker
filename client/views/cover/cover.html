@@ -1,0 +1,19 @@
+<Template name="cover">
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Tracker</h2>
+            </div>
+        </div>
+        {{#each allTracks}}
+        <div class="row">
+             <div class="col-md-12">
+                 {{>singleTrack}}
+            </div>
+        </div>
+        {{/each}}
+    </div>
+
+
+</Template>
