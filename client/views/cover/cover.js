@@ -1,6 +1,6 @@
 Template.cover.onCreated(function(){
   var self = this;
-  self.autoRun(function(){
+  self.autorun(function(){
     self.subscribe('allTracks');
   })
 });
