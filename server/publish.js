@@ -1,3 +1,3 @@
-Meteor.publish('allTracks', function(){
-  return Tracks.find({owner_id: this.userId});
+Meteor.publish('allTrackers', function(){
+  return Trackers.find({owner_id: this.userId});
 })

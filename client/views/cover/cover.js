@@ -1,12 +1,12 @@
 Template.cover.onCreated(function(){
   var self = this;
   self.autorun(function(){
-    self.subscribe('allTracks');
+    self.subscribe('allTrackers');
   })
 });
 
 Template.cover.helpers({
-  allTracks: function(){
-    return Tracks.find({owner_id: Meteor.userId()});
+  allTrackers: function(){
+    return Trackers.find({owner_id: Meteor.userId()});
   }
 })

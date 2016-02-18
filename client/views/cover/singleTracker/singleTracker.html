@@ -1,5 +1,6 @@
 <Template name="singleTracker">
-    {{#each allDays}}
+    <h3>{{name}} &nbsp;&nbsp;&nbsp;<small>{{goal}} / {{period}}</small></h3>
+    {{#each allRecords}}
     {{>singleDay}}
     {{/each}}
     <hr>
