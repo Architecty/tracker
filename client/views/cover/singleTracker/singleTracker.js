@@ -1,15 +1,23 @@
+Template.singleTracker.onCreated(function(){
+  var self = this;
+  self.autorun(function(){
+    self.subscribe('lastMonthsTrackers', Template.currentData()._id)
+  })
+})
+
 Template.singleTracker.helpers({
   allRecords: function(){
     var thisTracker = this;
     var records = [];
     for(var i = 0; i < 30; i++){
-      var dayRecords = Records.find({time: {$lte: moment().startOf('d').subtract(i, 'd').valueOf()}, time: {$gte: moment().startOf('d').subtract(i + 1, 'd')}});
+      var dayRecords = Records.find({date: {$gte: moment().startOf('d').subtract(i, 'd').valueOf()}, date: {$lte: moment().endOf('d').subtract(i, 'd').valueOf()}});
       var thisDay = {
-        day: moment().subtract(i + 1, 'd'),
+        day: moment().startOf('d').subtract(i, 'd').valueOf(),
         responses: dayRecords.count(),
-        goalProgress: !(i%3) ? "complete": "",
+        goalProgress: (dayRecords.count() >= thisTracker.goal) ? "complete" : "",
         color: "color"
       }
+console.log(thisDay);
 
       records.push(thisDay)
     }
