@@ -16,3 +16,11 @@ Template.singleTracker.helpers({
     return records;
   }
 })
+
+
+Template.singleTracker.events({
+  "click .didIt": function(e){
+    var tracker_id = $(e.currentTarget).closest('div').prop('id');
+    Meteor.call('addRecord', tracker_id)
+  }
+})

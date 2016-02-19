@@ -7,6 +7,7 @@ Template.addTracker.events({
         console.log(name, goal, period);
         if(name &&  goal && period){
             Meteor.call('addTracker', name, goal, period);
+            FlowRouter.go('cover');
         }
     }
 })

@@ -1,7 +1,16 @@
 <Template name="singleTracker">
-    <h3>{{name}} &nbsp;&nbsp;&nbsp;<small>{{goal}} / {{period}}</small></h3>
-    {{#each allRecords}}
-    {{>singleDay}}
-    {{/each}}
-    <hr>
+    <div id="{{_id}}">
+        <h3>
+            <button class="btn btn-primary btn-sm didIt">Did it!</button>
+            &nbsp;&nbsp;&nbsp;
+            {{name}}
+            <span class="pull-right">
+                <small>{{goal}} / {{period}}</small>
+            </span>
+        </h3>
+        {{#each allRecords}}
+            {{>singleDay}}
+        {{/each}}
+        <hr>
+    </div>
 </Template>
