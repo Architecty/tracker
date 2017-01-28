@@ -17,7 +17,7 @@ Template.singleTracker.helpers({
         goalProgress: (dayRecords.count() >= thisTracker.goal) ? "complete" : "",
         color: "color"
       }
-console.log(thisDay);
+      console.log(thisDay);
 
       records.push(thisDay)
     }
